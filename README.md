@@ -1,6 +1,6 @@
 # Thread Hijacking 
 
-> Shellcode execution without `CreateRemoteThread` — hijack an existing thread, redirect `RIP`, let it do the work.
+> Shellcode execution without `CreateRemoteThread` hijack an existing thread, redirect `RIP`, let it do the work.
 
 ---
 
