@@ -1,4 +1,4 @@
-# Thread Hijacking — Local Thread Execution Hijacking via Context Manipulation
+# Thread Hijacking 
 
 > Shellcode execution without `CreateRemoteThread` — hijack an existing thread, redirect `RIP`, let it do the work.
 
