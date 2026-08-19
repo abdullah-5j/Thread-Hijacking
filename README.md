@@ -5,6 +5,7 @@
 ---
 
 This project demonstrates **local thread execution hijacking** as a process injection primitive. Rather than spawning a new thread the technique allocates executable memory within the current process, copies position-independent shellcode into it, then locates a secondary thread via `CreateToolhelp32Snapshot`, suspends it, captures its full `CONTEXT`, redirects the `RIP` register to the shellcode address via `SetThreadContext`, and resumes the thread. A dedicated stack is allocated and 16-byte aligned before context is committed, preserving ABI requirements. 
+
 The included payload is a standard x64 `calc.exe` shellcode demonstrating end-to-end execution. The main thread is excluded from hijacking by comparing against `GetCurrentThreadId()`, and memory permissions are staged `PAGE_READWRITE` during copy, then hardened to `PAGE_EXECUTE_READ` before the thread is released to avoid writing directly to executable pages.
 
 ---
